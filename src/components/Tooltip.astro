@@ -1,0 +1,94 @@
+---
+import type { Enchantment } from "~/types/types.d";
+
+interface Props {
+  color?: string;
+  enchantments: Array<Enchantment>;
+  id: `minecraft:${string}`;
+  lore: string;
+  nbt?: any; // NBT;
+  title: string;
+  trigger?: string;
+}
+
+const { lore, title, trigger, enchantments, id } = Astro.props;
+---
+
+<div class="relative">
+  <span class="tooltip-trigger">
+    {trigger !== null ? trigger : "Objeto"}
+  </span>
+  <div class="tooltip hidden absolute text-sm rounded-lg py-2 px-4 mt-2">
+    <h3 class="tooltip-title text-lg font-bold mb-2">{title}</h3>
+    <p class="tooltip-lore mb-2">{lore}</p>
+    <ul class="tooltip-enchantments mb-2">
+      {
+        enchantments.map(({ id, lvl }) => (
+          <li>
+            {id}
+            {lvl}
+          </li>
+        ))
+      }
+    </ul>
+    <p class="tooltip-id mb-2">{id}</p>
+    <div class="tooltip-nbt">
+      <p>Daño: 156</p>
+      <p>Durabilidad: 1549</p>
+    </div>
+  </div>
+</div>
+
+<!--
+<style>
+  /*
+  .tooltip-trigger {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 240px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .tooltip-trigger:hover + .tooltip,
+  .tooltip:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .tooltip-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .tooltip-lore {
+    margin-bottom: 8px;
+  }
+
+  .tooltip-encantamientos {
+    margin-bottom: 8px;
+  }
+
+  .tooltip-id {
+    margin-bottom: 8px;
+  }
+
+  .tooltip-nbt p {
+    margin-bottom: 4px;
+  }
+  */
+</style>
+-->

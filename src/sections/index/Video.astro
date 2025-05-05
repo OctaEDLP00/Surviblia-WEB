@@ -1,0 +1,56 @@
+---
+import PlayIcon from "~/components/icons/Play.astro";
+---
+
+<section class="video-section contenedor">
+  <div class="video-card">
+    <div class="video-thumbnail">
+      <img src="" alt="Survival Beyond thumbnail" />
+      <div class="play-button">
+        <PlayIcon />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .video-section {
+    padding-bottom: 6rem;
+  }
+
+  .video-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .video-thumbnail {
+    position: relative;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .play-button svg {
+    color: white;
+  }
+</style>

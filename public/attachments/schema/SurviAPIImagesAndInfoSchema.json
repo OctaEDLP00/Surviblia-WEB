@@ -1,0 +1,74 @@
+{
+  "$ref": "#/definitions/SurviImageAndInfo",
+  "definitions": {
+    "Banners": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "properties": {
+        "episodios": {
+          "type": "string"
+        },
+        "extras": {
+          "type": "string"
+        },
+        "herramientas": {
+          "type": "string"
+        },
+        "mascotas": {
+          "type": "string"
+        },
+        "proyectos": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "episodios",
+        "herramientas",
+        "mascotas",
+        "proyectos",
+        "extras"
+      ],
+      "type": "object"
+    },
+    "Images": {
+      "additionalProperties": false,
+      "properties": {
+        "banners": {
+          "$ref": "#/definitions/Banners"
+        },
+        "svsg": {
+          "type": "string"
+        }
+      },
+      "required": ["banners", "svsg"],
+      "type": "object"
+    },
+    "SurviImageAndInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "images": {
+          "$ref": "#/definitions/Images"
+        },
+        "video_references": {
+          "$ref": "#/definitions/VideoReferences"
+        }
+      },
+      "required": ["images", "video_references"],
+      "type": "object"
+    },
+    "VideoReferences": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "video_references is a key about the video reference and value is a reference to the video id",
+      "properties": {
+        "survival_beyond": {
+          "type": "string"
+        }
+      },
+      "required": ["survival_beyond"],
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+---
+import EpisodiosTable from "~/components/EpisodiosTable.astro";
+import type { SurviAPIEpisodesVideos } from "~/types/SurviAPIEpisodes.d.ts";
+
+const res = await fetch("");
+const episodios = (await res.json()) as SurviAPIEpisodesVideos;
+---
+
+<section>
+  <div id="episodio-grid">
+    {
+      episodios.map(
+        ({ episode_title, videoId, version, thumbnails, episode_number }) => (
+          <EpisodiosTable
+            videoId={videoId}
+            version={version}
+            episodeTitle={episode_title}
+            thumbnails={thumbnails}
+            episodeNumber={episode_number}
+          />
+        ),
+      )
+    }
+  </div>
+</section>

@@ -1,0 +1,51 @@
+---
+import type { Link } from "~/types/types.d";
+const { path, text, subpath } = Astro.props as Link;
+---
+
+{
+	subpath && subpath.length > 0 && subpath !== null ? (
+		<li>
+			<button
+				type="button"
+				class="flex items-center w-full p-2 text-base transition duration-75 rounded-lg group hover:bg-gray-100 dark:hover:bg-gray-700"
+				aria-control={`dropdown-${text}`}
+				data-colapse-toggle={`dropdown-${text}`}
+			>
+				<span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
+					{text}
+				</span>
+				<svg class="w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 10 6">
+					<path
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="m1 1 4 4 4-4"
+					/>
+				</svg>
+			</button>
+			<ul id={`dropdown-${text}`} class="hidden py-2 space-y-2">
+				{subpath.map((s) => (
+					<li>
+						<a
+							href={`${path}${s.path}`}
+							class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
+						>
+							{s.text}
+						</a>
+					</li>
+				))}
+			</ul>
+		</li>
+	) : (
+		<li>
+			<a
+				class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+				href={path}
+			>
+				<span class="ms-3">{text}</span>
+			</a>
+		</li>
+	)
+}

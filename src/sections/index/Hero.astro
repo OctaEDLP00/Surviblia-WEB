@@ -1,0 +1,69 @@
+<section class="hero">
+  <div class="contenedor">
+    <h1 class="title">Bienvenidos a Surviblia</h1>
+    <h4 class="subtitle">La wiki del mundo Survival de ElRichMC</h4>
+    <blockquote>
+      "Un héroe puede ser cualquiera, incluso un hombre haciendo algo tan simple
+      y loco como vaciar cientos de chunks en modo supervivencia para enseñarle
+      al mundo que la determinación y perseverancia pueden provenir desde
+      cualquier origen"
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .hero {
+    padding: 6rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .hero h1 {
+      font-size: 3.75rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+    }
+
+    .card {
+      padding: 1rem;
+    }
+  }
+
+  .hero .subtitle {
+    color: var(--muted-foreground);
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero blockquote {
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+    color: var(--muted-foreground);
+    border-left: 4px solid var(--border);
+    padding-left: 1rem;
+    font-size: 0.875rem;
+  }
+</style>

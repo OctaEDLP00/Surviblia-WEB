@@ -1,0 +1,26 @@
+---
+import type { _TypeVideo } from "~/types/types.d";
+
+interface Props {
+  src: string;
+  videoSrc?: Array<{
+    src: string;
+    type?: _TypeVideo | string | null;
+  }>;
+}
+
+const { videoSrc, src } = Astro["props"];
+---
+
+<video src={src}>
+  {
+    videoSrc !== undefined &&
+      videoSrc.length > 1 &&
+      videoSrc.map(({ src, type }) => <source src={src} type={type} />)
+  }
+  {
+    videoSrc !== undefined && videoSrc.length === 1 && (
+      <source src={videoSrc[0]?.src} type={videoSrc[0]?.type} />
+    )
+  }
+</video>

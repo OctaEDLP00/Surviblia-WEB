@@ -1,0 +1,18 @@
+---
+import { Links } from '@/consts/index';
+import Link from './Link.astro';
+---
+
+<aside
+	class='fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full border-r border-gray-200 sm:translate-x-0 dark:border-neutral-700'
+>
+	<div class='h-full px-3 pb-4 overflow-y-auto'>
+		<ul class='space-y-2 font-medium'>
+			{
+				Links.map(({ path, text, subpath }) => (
+					<Link href={path} text={text} subpath={subpath} />
+				))
+			}
+		</ul>
+	</div>
+</aside>

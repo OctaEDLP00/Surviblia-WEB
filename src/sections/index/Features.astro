@@ -1,0 +1,138 @@
+---
+import Card from "@/components/Card.astro";
+// Icons
+import BookIcon from "@/components/icons/Book.astro";
+import ExtraIcon from "@/components/icons/Extra.astro";
+import LoreIcon from "@/components/icons/Lore.astro";
+import MapaIcon from "@/components/icons/Map.astro";
+import PetsIcon from "@/components/icons/Pets.astro";
+import ProjectIcon from "@/components/icons/Project.astro";
+import SVSGIcon from "@/components/icons/Svsg.astro";
+import TimelapseIcon from "@/components/icons/Timelapse.astro";
+import TimelineIcon from "@/components/icons/Timeline.astro";
+import ToolsIcon from "@/components/icons/Tools.astro";
+
+interface InfoCard {
+  title: string;
+  description: string;
+  linkText: string;
+  href: string;
+  icon: (_props: Record<string, any>) => any;
+}
+
+type InfoCards = Array<InfoCard>;
+
+const INFO_CARDS = [
+  {
+    title: "Episodios",
+    description: "Explora todos los episodios de la serie",
+    linkText: "Ver episodios",
+    href: "/episodios",
+    icon: BookIcon,
+  },
+  {
+    title: "Proyectos",
+    description: "Descubre las increíbles construcciones",
+    linkText: "Ver proyectos",
+    href: "/proyectos",
+    icon: ProjectIcon,
+  },
+  {
+    title: "Macotas",
+    description: "Descubre sus mascotas durante la serie",
+    linkText: "Ver mascotas",
+    href: "/mascotas",
+    icon: PetsIcon,
+  },
+  {
+    title: "Herramientas",
+    description: "Descubre las herramientas que uso en la serie",
+    linkText: "Ver herramientas",
+    href: "/herramientas",
+    icon: ToolsIcon,
+  },
+  {
+    title: "Mapa",
+    description: "Explora el mundo de Survival",
+    linkText: "Ver mapa",
+    href: "/mapa",
+    icon: MapaIcon,
+  },
+  {
+    title: "Timeline",
+    description: "Explora el transcurso de la serie a través del tiempo",
+    linkText: "Ver timeline",
+    href: "/timeline",
+    icon: TimelineIcon,
+  },
+  {
+    title: "Lore, Anmcn y Cinematicas",
+    description: "Explora Lore Anmcn y cinematicas de la serie",
+    linkText: "Ver Lores, Anmcn. y Cinema.",
+    href: "/lore-animaciones-cinemticas",
+    icon: LoreIcon,
+  },
+  {
+    title: "Timelapse",
+    description: "Explora los Timelapses de la serie",
+    linkText: "Ver timelapse",
+    href: "/timelapse",
+    icon: TimelapseIcon,
+  },
+  {
+    title: "SVSG",
+    description: "Explora las soluciones de este minijuego",
+    linkText: "Ver SVSG",
+    href: "/svsg",
+    icon: SVSGIcon,
+  },
+  {
+    title: "Extras",
+    description: "Descubre mas información sobre la serie",
+    linkText: "Ver Extras",
+    href: "/extra",
+    icon: ExtraIcon,
+  },
+] satisfies InfoCards;
+---
+
+<section class="features contenedor">
+  {
+    INFO_CARDS.map(({ title, description, icon: Icon, linkText, href }) => (
+      <Card
+        title={title}
+        description={description}
+        linkText={linkText}
+        href={href}
+      >
+        <Icon slot="icon" />
+      </Card>
+    ))
+  }
+</section>
+
+<style>
+  .contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .features {
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 6rem;
+  }
+
+  @media (min-width: 768px) {
+    .features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .features {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

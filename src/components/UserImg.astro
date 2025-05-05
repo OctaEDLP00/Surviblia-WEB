@@ -1,0 +1,18 @@
+---
+interface Props {
+	src: string;
+	alt: string;
+	width?: string | number | null;
+	height?: string | number | null;
+}
+
+const { src, alt, width, height } = Astro.props;
+---
+
+<img
+	class="w-8 h-8 rounded-full"
+	src={src}
+	alt={alt}
+	width={width}
+	height={height}
+/>

@@ -1,0 +1,15 @@
+{
+  "images": {
+    "banners": {
+      "episodios": "/assets/banners/episodios.png",
+      "extras": "/assets/banners/extras.png",
+      "herramientas": "/assets/banners/herramientas.png",
+      "mascotas": "/assets/banners/mascotas.png",
+      "proyectos": "/assets/banners/proyectos.png"
+    },
+    "svsg": "/assets/structure_void.webp"
+  },
+  "video_references": {
+    "survival_beyond": "liwGCvaEw3A"
+  }
+}
