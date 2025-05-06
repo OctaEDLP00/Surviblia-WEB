@@ -3,7 +3,7 @@ import type {
   LEVEL_WITH_NUMBER_ROMAN,
   MIME_IMAGES, MIME_VIDEO,
   REL_TYPE, TARGET_TYPE
-} from "../consts/types";
+} from "~/consts/types";
 
 type _TypeVideo = (typeof MIME_VIDEO)[keyof typeof MIME_VIDEO]
 type _TypeImages = (typeof MIME_IMAGES)[keyof typeof MIME_IMAGES]

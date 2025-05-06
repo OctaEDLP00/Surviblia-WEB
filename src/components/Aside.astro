@@ -1,5 +1,5 @@
 ---
-import { Links } from '@/consts/index';
+import { Links } from '~/consts/index';
 import Link from './Link.astro';
 ---
 
@@ -10,7 +10,7 @@ import Link from './Link.astro';
 		<ul class='space-y-2 font-medium'>
 			{
 				Links.map(({ path, text, subpath }) => (
-					<Link href={path} text={text} subpath={subpath} />
+					<Link path={path} text={text} subpath={subpath} />
 				))
 			}
 		</ul>
