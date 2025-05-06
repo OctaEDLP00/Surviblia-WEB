@@ -1,4 +1,4 @@
-import type { HexColor } from "../types/types"
+import type { HexColor } from "~/types/types"
 
 function isHexColor(value: string): value is HexColor {
   const hexColorRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/

@@ -126,7 +126,7 @@ export type {
   _TypeImages, _TypeVideo, AllVersions, ArmorType, Biome, Enchantment, Gamemode, HexColor, IdBiome, LevelWithNumber,
   LevelWithNumberRoman,
   RelType,
-  TargetType, Weights
+  TargetType, Weights, IdEnchantName
 };
 export default {
   AllVersions, ArmorType, Enchantment, Gamemode, HexColor,
@@ -135,6 +135,6 @@ export default {
   RelType,
   TargetType, Weights, Biome, IdBiome,
   _TypeVideo,
-  _TypeImages
+  _TypeImages, IdEnchantName
 }
 

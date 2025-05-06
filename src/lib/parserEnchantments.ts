@@ -1,4 +1,4 @@
-import type { Enchantment, IdEnchantName } from '../types/types'
+import type { Enchantment, IdEnchantName } from '~/types/types.d'
 
 const capitalizeForWords = (str: string): string => str
   .split(' ')
