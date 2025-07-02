@@ -1,4 +1,20 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --font-minecraft: 'minecraft';
+  --font-minecraft-ench: 'minecraft-ench';
+}
+
+@font-face {
+  font-family: 'minecraft';
+  font-weight: normal;
+  src: url('/attachments/fonts/Minecraft.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'minecraft-ench';
+  font-weight: normal;
+  src: url('/attachments/fonts/SgaSmoothRegular.woff2') format('woff2');
+}
 
 :root {
   --background: #ffffff;

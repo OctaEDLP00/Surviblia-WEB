@@ -1,12 +1,12 @@
 import type { ArmorType, RelType, TargetType, Weights } from '../types/types'
 
-interface Link {
+export interface Link {
   text: string
   path: string
+  icon?: (_props: Record<string, unknown>) => unknown
   subpath?: Array<Link>
   target?: TargetType
   rel?: RelType
-  icon?: any
 }
 
 const Links = [
@@ -48,7 +48,7 @@ const Links = [
           },
           {
             text: 'Incinerador',
-            path: '/incinerdor',
+            path: '/incinerador',
           },
           {
             text: 'Generador de Endercrystal',
@@ -358,7 +358,7 @@ const Links = [
           },
           {
             text: 'Granja de Hielo v2',
-            path: '/granja-de-hierro-v2',
+            path: '/granja-de-hielo-v2',
           },
           {
             text: 'Granja de Nether Wart',
@@ -474,7 +474,7 @@ const Links = [
           },
           {
             text: 'Magma Cube Totem',
-            path: '/magama-cube-totem',
+            path: '/magma-cube-totem',
           },
           {
             text: 'Globglobgabgalab',
@@ -544,7 +544,7 @@ const Links = [
           },
           {
             text: 'Creeper Electrico (Caballo)',
-            path: '/crepper-electrico',
+            path: '/creeper-electrico',
           },
           {
             text: 'Timoteo I',
@@ -727,7 +727,7 @@ const Links = [
   },
   {
     text: 'SVSG',
-    path: '',
+    path: '/svsg',
     subpath: [
       {
         text: 'Ep 156 - Consigo TODOS los bloques Ilegales de Minecraft',
@@ -787,35 +787,35 @@ const Links = [
       },
       {
         text: 'Ep 170 - Actualizar mi mundo rompe granjas',
-        path: '/170'
+        path: '/170',
       },
       {
         text: 'Ep 171 - 100.000 Ender Pearls SUPERSTACKEADAS de 64',
-        path: '/171'
+        path: '/171',
       },
       {
         text: 'Ep 172',
-        path: '/172'
+        path: '/172',
       },
       {
         text: 'Ep 173',
-        path: '/173'
+        path: '/173',
       },
       {
         text: 'Ep 174',
-        path: '/174'
+        path: '/174',
       },
       {
         text: 'Ep 175',
-        path: '/175'
+        path: '/175',
       },
       {
         text: 'Ep 176',
-        path: '/176'
+        path: '/176',
       },
       {
         text: 'Ep 177',
-        path: '/177'
+        path: '/177',
       },
     ],
   },
@@ -825,17 +825,17 @@ const Links = [
     subpath: [
       {
         text: 'Memes de Survival',
-        path: '/memes-survival'
+        path: '/memes-survival',
       },
       {
         text: 'Fan Arts',
-        path: '/fan-arts'
+        path: '/fan-arts',
       },
     ],
   },
   {
     text: '¡Apoya a ElRichMC!',
-    path: '/apoya-a-elrichmc'
+    path: '/apoya-a-elrichmc',
   },
 ] satisfies Array<Link>
 
@@ -845,7 +845,7 @@ const ArmorWeight: Record<ArmorType, Weights> = {
   gold: 'medium',
   iron: 'medium',
   diamond: 'high',
-  netherite: 'high'
+  netherite: 'high',
 }
 
 export { ArmorWeight, Links }

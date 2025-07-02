@@ -1,0 +1,34 @@
+---
+import { Links as LINKS } from '~/consts/index'
+import Link from './Link.astro'
+---
+
+<nav class="row-span-4 row-start-2 h-screen">
+  <ul class="flex flex-col gap-1">
+    {LINKS.map((item) => <Link item={item} />)}
+  </ul>
+</nav>
+
+<script>
+  import { $$, print } from '~/lib/Dom'
+
+  const $btns = Array.from($$<HTMLButtonElement>('aside nav ul li button'))
+  const $anchors = Array.from($$<HTMLAnchorElement>('ul li a'))
+  const $uls = Array.from($$<HTMLUListElement>('ul.hidden'))
+
+  $btns?.map((btn) =>
+    btn?.addEventListener('click', () => {
+      // agregar logica para cuando el dataset del boton es igual al id del ul sacarle la clase hidden
+      $uls.map((ul) => {
+        print({ ul: ul.dataset, btn: btn.dataset })
+        // ul.classList.remove('hidden')
+      })
+    })
+  )
+  //
+  $anchors?.map((anchor) =>
+    anchor?.addEventListener('click', () => {
+      $uls.map((ul) => ul.classList.toggle('hidden'))
+    })
+  )
+</script>

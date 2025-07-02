@@ -1,55 +1,52 @@
 ---
-import "../styles/globals.css";
+import '../styles/globals.css'
+
+import Pagination from '~/components/Pagination.astro'
+import Header from '~/components/Header.astro'
 
 interface Props {
-	title: string;
-	description: string;
+  title: string
+  description: string
+  headerSrc?: string
 }
 
-const { title, description } = Astro.props;
+const {
+  title,
+  description,
+  headerSrc = '/attachments/logos/logo_surviblia(85x70).png',
+} = Astro.props
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/png" href="/favicon.png" />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{title}</title>
+  </head>
+  <body class="grid grid-cols-5 grid-rows-5 gap-4">
+    <Header src={headerSrc} />
+    <Pagination />
+    <main class="col-span-4 row-span-4 row-start-2">
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style is:global>
-	@font-face {
-		font-family: "minecraft";
-		font-weight: normal;
-		src:
-			url("/attachments/fonts/MinecraftRegular.woff2") format("woff2"),
-			url("/attachments/fonts/MinecraftRegular.ttf") format("ttf"),
-			url("/attachments/fonts/MinecraftRegular.otf") format("otf");
-	}
-	@font-face {
-		font-family: "minecraft-ench";
-		font-weight: normal;
-		src: url("/attachments/fonts/SgaSmoothRegular.woff2") format("woff2");
-	}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	body {
-		font-family: "Inter", sans-serif;
-		background-color: var(--background);
-		color: var(--foreground);
-		line-height: 1.5;
-	}
-
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.5;
+  }
 </style>

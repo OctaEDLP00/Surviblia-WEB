@@ -1,19 +1,13 @@
 ---
-import Header from "~/components/Header.astro";
-import Layout from "~/layouts/Layout.astro";
-import Features from "~/sections/index/Features.astro";
-import Hero from "~/sections/index/Hero.astro";
-import Video from "~/sections/index/Video.astro";
+import Layout from '~/layouts/Layout.astro'
+import Hero from '~/sections/index/Hero.astro'
+import Video from '~/sections/index/Video.astro'
 ---
 
 <Layout
-	title="Surviblia | Wiki del mundo Survival del ElRichMC"
-	description="Una breve descripcion de la pagina no oficial de Surviblia que ira aquí"
+  title="Surviblia | Wiki del mundo Survival del ElRichMC"
+  description="Una breve descripcion de la pagina no oficial de Surviblia que ira aquí"
 >
-	<Header src="/attachments/logos/logo_surviblia(85x70).png" />
-	<main>
-		<Hero />
-		<Features />
-		<Video />
-	</main>
+  <Hero />
+  <Video />
 </Layout>

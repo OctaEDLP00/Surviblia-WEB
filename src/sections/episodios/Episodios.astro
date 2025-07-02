@@ -1,6 +1,6 @@
 ---
 import EpisodiosTable from "~/components/EpisodiosTable.astro";
-import type { SurviAPIEpisodesVideos } from "~/types/SurviAPIEpisodes.d.ts";
+import type { SurviAPIEpisodesVideos } from "~/types/SurviAPIEpisodes.d";
 
 const res = await fetch("");
 const episodios = (await res.json()) as SurviAPIEpisodesVideos;

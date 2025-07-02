@@ -1,0 +1,24 @@
+---
+import Layout from '~/layouts/Layout.astro'
+---
+
+<Layout title="🔒 Dashboard - Surviblia | Wiki del mundo Survival del ElRichMC" description="">
+  <div>
+    <form method="POST" action="/api/endpoint">
+      <div>
+        <label>
+          Username: <input type="text" id="username" name="username" />
+        </label>
+
+        <label>
+          Email: <input type="email" id="email" name="email" />
+        </label>
+
+        <label>
+          Password: <input type="password" id="password" name="password" />
+        </label>
+      </div>
+      <button type="submit">Send Info</button>
+    </form>
+  </div>
+</Layout>

@@ -1,11 +1,22 @@
-import { defineConfig } from 'eslint/config'
+// @ts-check
+import eslint from '@eslint/js'
+import tsEslint from 'typescript-eslint'
 import eslintPluginAstro from 'eslint-plugin-astro'
+import parserTs from '@typescript-eslint/parser'
 
-export default defineConfig([
+export default tsEslint.config(
+  eslint.configs.recommended,
+  tsEslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   {
+    files: ['**/*.astro'],
+    plugins: {
+      parserTs,
+    },
+  },
+  {
     rules: {
-      'comma-dangle': ['error', 'always-multiline']
-    }
+      '@typescript-eslint/ban-ts-comment': 'off',
+    },
   }
-])
+)

@@ -24,6 +24,4 @@ interface SurviAPIEpisodes {
 
 type SurviAPIEpisodesVideos = Array<SurviAPIEpisodes>
 
-
 export type { SurviAPIEpisodes, SurviAPIEpisodesVideos }
-export default { SurviAPIEpisodesVideos, SurviAPIEpisodes }

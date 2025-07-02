@@ -1,7 +1,7 @@
-dist/
-.output/
+dist
+.output
 
-node_modules/
+node_modules
 
 npm-debug.log*
 yarn-debug.log*
@@ -13,7 +13,7 @@ pnpm-debug.log*
 
 .DS_Store
 
-.astro/
+.astro
 
 package-lock.json
 pnpm-lock.yaml
